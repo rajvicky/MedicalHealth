@@ -1,0 +1,88 @@
+<h3>Create Contact</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="contactsaveform" #saveCont (ngSubmit)="saveContact(saveCont)">  
+          <div class="form-group">  
+              <label for="name">First Name</label>  
+              <input type="text" class="form-control"  formControlName="first_name" data-toggle="tooltip"   
+                 data-placement="right" title="Enter First Name" >  
+              <div class="alert alert-danger" *ngIf = "(FirstName.touched) && (FirstName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="FirstName.errors.required">First Name is Required</span>  
+                    <span *ngIf = "FirstName.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div> 
+          </div>  
+
+          <div class="form-group">  
+            <label for="name">Last Name</label>  
+            <input type="text" class="form-control"  formControlName="last_name" data-toggle="tooltip"   
+               data-placement="right" title="Enter Last Name" >  
+            <div class="alert alert-danger" *ngIf = "(LastName.touched) && (LastName.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="LastName.errors.required">Last Name is Required</span>  
+                  <span *ngIf = "LastName.errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div> 
+        </div>  
+    
+          <div class="form-group">  
+              <label for="name"> Email</label>  
+              <input type="text" class="form-control" formControlName="contact_email"   
+                data-toggle="tooltip" data-placement="right" title="Enter  Email">  
+                <div class="alert alert-danger" *ngIf = "(ContactEmail.touched) && (ContactEmail.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="ContactEmail.errors.required">Email is Required</span>  
+                    <span *ngIf = "ContactEmail.errors.email">   
+                        Invalid Email Format   
+                    </span>                     
+                </div> 
+          </div>  
+
+          <div class="form-group">  
+            <label for="name">Phone </label>  
+            <input type="text" class="form-control"  formControlName="contact_phone" data-toggle="tooltip"   
+               data-placement="right" title="Enter Phone" >  
+            <div class="alert alert-danger" *ngIf = "(ContactPhone.touched) && (ContactPhone.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="LastName.errors.required">Phone number is required</span>  
+                  <span *ngIf = "ContactPhone.errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div> 
+        </div>  
+
+        <div class="form-group">  
+            <label for="name">Status </label>  
+            <input type="text" class="form-control"  formControlName="contact_status" data-toggle="tooltip"   
+               data-placement="right" title="" >  
+           <div class="alert alert-danger" *ngIf = "(ContactStatus.touched) && (ContactStatus.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="LastName.errors.required">Phone number is required</span>  
+                  <span *ngIf = "ContactStatus.errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div> 
+        </div>  
+          
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Conntact Added SuccessFully!</h4>  
+         <button (click)="addContactForm()" class='btn btn-primary'>Add More Contact</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  

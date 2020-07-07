@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: HEALTH ORGANIZATION
+  datasource:
+        url: jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12352341
+        username: sql12352341
+        password: 2F9JXSR2Sp
+  jpa:
+    properties:
+        hibernate:
+            dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+        ddl-auto: update
+    show-sql: true
+server:
+  port: 8082
+    #jpa:
+        #hibernate:            
+            #show-sql: true
+            #ddl-auto: create-drop
+    
